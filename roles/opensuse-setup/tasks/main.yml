@@ -2,7 +2,7 @@
 # tasks file for opensuse-setup
 
 - name: install packages
-  package: name={{ pkgs }} state=installed update_cache=yes
+  package: name={{ pkgs }} state=present update_cache=yes
 
 - name: Install multiple packages
   community.general.flatpak: name={{ flatpaks }} state=present
