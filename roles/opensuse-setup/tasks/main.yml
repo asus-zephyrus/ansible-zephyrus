@@ -1,7 +1,7 @@
 ---
 # tasks file for opensuse-setup
 
-- name: install terraform
+- name: install packages
   package:
     name: 
     - python3
@@ -34,4 +34,3 @@
       - com.visualstudio.code
       - com.skype.Client
     state: absent
-    update_cache: yes
