@@ -1,0 +1,6 @@
+- name: Install opensuse basic packages
+  hosts: localhost
+  become: yes
+  roles:
+    - { role: opensuse-setup ,become: yes }
+
