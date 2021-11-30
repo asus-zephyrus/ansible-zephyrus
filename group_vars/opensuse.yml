@@ -1,0 +1,26 @@
+ vars:
+    pkgs:
+    - python3
+    - openssl
+    - terraform 
+    - nodejs14
+    - opi
+    - qbittorrent
+    - vlc
+    - zsh
+    - cherrytree
+    - flameshot
+    - gh
+    
+    flatpaks:
+    - com.jetbrains.PyCharm-Community
+    - com.getpostman.Postman
+    - net.daase.journable
+    - com.jgraph.drawio.desktop
+    - org.standardnotes.standardnotes
+    - io.dbeaver.DBeaverCommunity
+    - org.remmina.Remmina
+    - us.zoom.Zoom
+    - net.meijn.onvifviewer
+    - com.visualstudio.code
+    - com.skype.Client

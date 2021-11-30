@@ -7,5 +7,5 @@ ansible-galaxy collection install community.general
 
 ## Run the playbook 
 ```
-ansible-playbook opensuse-playbook.yml
+ansible-playbook opensuse-playbook.yml -e "@group_vars/opensuse.yml"
 ```

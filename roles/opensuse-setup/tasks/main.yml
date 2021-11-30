@@ -2,35 +2,7 @@
 # tasks file for opensuse-setup
 
 - name: install packages
-  package:
-    name: 
-    - python3
-    - openssl
-    - terraform 
-    - nodejs14
-    - opi
-    - qbittorrent
-    - vlc
-    - zsh
-    - cherrytree
-    - flameshot
-    - gh
-    state: absent
-    update_cache: yes
-    
+  package: name={{ pkgs }} state=installed update_cache=yes
 
 - name: Install multiple packages
-  community.general.flatpak:
-    name:
-      - com.jetbrains.PyCharm-Community
-      - com.getpostman.Postman
-      - net.daase.journable
-      - com.jgraph.drawio.desktop
-      - org.standardnotes.standardnotes
-      - io.dbeaver.DBeaverCommunity
-      - org.remmina.Remmina
-      - us.zoom.Zoom
-      - net.meijn.onvifviewer
-      - com.visualstudio.code
-      - com.skype.Client
-    state: absent
+  community.general.flatpak: name={{ flatpaks }} state=installed update_cache=yes
