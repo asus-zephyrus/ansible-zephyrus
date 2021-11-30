@@ -2,7 +2,7 @@
 # tasks file for opensuse-setup
 
 - name: install terraform
-  zypper:
+  package:
     name: 
     - python3
     - openssl
@@ -15,8 +15,8 @@
     - cherrytree
     - flameshot
     - gh
-  state: absent
-  update_cache: yes
+    state: absent
+    update_cache: yes
     
 
 - name: Install multiple packages
@@ -33,5 +33,5 @@
       - net.meijn.onvifviewer
       - com.visualstudio.code
       - com.skype.Client
-  state: absent
-  update_cache: yes
+    state: absent
+    update_cache: yes
