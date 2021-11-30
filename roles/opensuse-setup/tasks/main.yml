@@ -3,7 +3,7 @@
 
 - name: install terraform
   state: absent
-  update_cache: true
+  update_cache: yes
   zypper:
     name: 
     - python3
@@ -21,7 +21,7 @@
 
 - name: Install multiple packages
   state: absent
-  update_cache: true
+  update_cache: yes
   community.general.flatpak:
     name:
       - com.jetbrains.PyCharm-Community
