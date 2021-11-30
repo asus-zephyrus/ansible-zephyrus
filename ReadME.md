@@ -7,5 +7,7 @@ ansible-galaxy collection install community.general
 
 ## Run the playbook 
 ```
-ansible-playbook opensuse-playbook.yml -e "@group_vars/opensuse.yml"
+This -K is for user password not root. by default we run this as root ( not a good practice )
+
+ansible-playbook opensuse-playbook.yml -e "@group_vars/opensuse.yml" -K
 ```

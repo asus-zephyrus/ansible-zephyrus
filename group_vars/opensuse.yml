@@ -1,4 +1,5 @@
-
+flathub_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+user: joy
 pkgs:
 - python3
 - openssl

@@ -4,5 +4,13 @@
 - name: install packages
   package: name={{ pkgs }} state=present update_cache=yes
 
+- name: Add flathub repo
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: {{ flathub_url }}
+    become_method: user
+    become_user: {{ user }}
+
 - name: Install multiple packages
-  community.general.flatpak: name={{ flatpaks }} state=present
+  community.general.flatpak: name={{ flatpaks }} state=present become_method=user become_user={{ user }}
