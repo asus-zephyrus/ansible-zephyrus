@@ -5,4 +5,4 @@
   package: name={{ pkgs }} state=installed update_cache=yes
 
 - name: Install multiple packages
-  community.general.flatpak: name={{ flatpaks }} state=installed update_cache=yes
+  community.general.flatpak: name={{ flatpaks }} state=installed
