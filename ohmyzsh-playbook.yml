@@ -1,0 +1,23 @@
+- name: Install ohmyzsh
+  hosts: localhost
+  roles:
+    - role: gantsign.antigen
+      users:
+        - username: joydeep
+          antigen_libraries:
+            - name: oh-my-zsh
+          antigen_theme:
+            name: robbyrussell
+          antigen_bundles:
+            # Bundles from the default repo (robbyrussell's oh-my-zsh).
+            - name: git
+            - name: globalias
+            - name: heroku
+            - name: pip
+            - name: lein
+            - name: command-not-found
+            - name: kubectl
+            - name: helm
+            # Syntax highlighting bundle.
+            - name: zsh-syntax-highlighting # `name` is required (any valid file name will do so long as it's unique for the bundles)
+              url: zsh-users/zsh-syntax-highlighting
