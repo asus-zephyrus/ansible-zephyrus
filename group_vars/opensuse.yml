@@ -14,6 +14,8 @@ pkgs:
 - gh
 - toolbox
 - deepin-terminal
+- aws-cli
+- code
 
 flatpaks:
 - com.jetbrains.PyCharm-Community
