@@ -12,6 +12,8 @@ pkgs:
 - cherrytree
 - flameshot
 - gh
+- toolbox
+- deepin-terminal
 
 flatpaks:
 - com.jetbrains.PyCharm-Community
