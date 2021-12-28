@@ -1,0 +1,7 @@
+- name: Install opensuse basic packages
+  hosts: localhost
+  become: yes
+  roles:
+    - role: arch-linux 
+      become: yes 
+

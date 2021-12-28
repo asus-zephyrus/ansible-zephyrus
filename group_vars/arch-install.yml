@@ -1,0 +1,21 @@
+flathub_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+user: joydeepr
+pkgs:
+# - python3
+- openssl
+- terraform 
+- nodejs
+# - opi
+- qbittorrent
+- vlc
+- zsh
+# - cherrytree
+- flameshot
+- github-cli
+# - toolbox
+- deepin-terminal
+# - aws-cli
+# - code
+- fzf
+- kubectl
+- helm

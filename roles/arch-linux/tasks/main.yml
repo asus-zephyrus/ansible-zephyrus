@@ -1,0 +1,4 @@
+---
+# tasks file for arch-linux
+- name: install packages
+  package: name={{ pkgs }} state=present update_cache=yes
