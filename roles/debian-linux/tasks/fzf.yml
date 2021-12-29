@@ -1,0 +1,14 @@
+- name: Git fzf clone
+  git:
+    repo: https://github.com/junegunn/fzf.git
+    dest: ~/.fzf
+    version: master
+  become: yes
+  become_user: joydeep
+
+- name: Install fzf
+  ansible.builtin.script: ~/.fzf/install
+  become: yes
+  become_user: joydeep
+
+  

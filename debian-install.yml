@@ -1,0 +1,9 @@
+- name: Install debian basic packages
+  hosts: localhost
+  become: yes
+  roles:
+    - role: debian-linux 
+      become: yes 
+    - role: deekayen.awscli2
+      become: yes
+      become_method: "sudo"

@@ -1,0 +1,8 @@
+---
+# tasks file for debian-linux
+- include_tasks: fzf.yml
+- include_tasks: kubectl.yml
+- include_tasks: terraform.yml
+
+- name: Install packages
+  package: name={{ pkgs }} state=present update_cache=yes
