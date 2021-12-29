@@ -3,6 +3,8 @@
 - include_tasks: fzf.yml
 - include_tasks: kubectl.yml
 - include_tasks: terraform.yml
+- include_tasks: kubectx.yml
+- include_tasks: appimagelauncher.yml
 
 - name: Install packages
   package: name={{ pkgs }} state=present update_cache=yes

@@ -1,0 +1,29 @@
+- name: Clone kubectx
+  git:
+    repo: https://github.com/ahmetb/kubectx
+    dest: /opt/kubectx
+  become: yes
+  become_method: sudo
+
+- name: Create symbolic link kubectx
+  file:
+    src: /opt/kubectx/kubectx
+    dest: /usr/local/bin/kubectx
+    state: link
+  become: yes
+  become_method: sudo
+
+- name: Create symbolic link kubens
+  file:
+    src: /opt/kubectx/kubens
+    dest: /usr/local/bin/kubens
+    state: link
+  become: yes
+  become_method: sudo  
+
+# - name: Create kubectx links
+#   ansible.builtin.script: |
+#     ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
+#     ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+# #   become: yes
+# #   become_method: sudo

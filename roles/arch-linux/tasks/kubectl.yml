@@ -1,0 +1,12 @@
+- name: Creates local bin directory
+  file:
+    path: ~/.local/bin
+    state: directory
+  become_user: joydeep
+
+- name: Download kubectl to local bin directory
+  get_url:
+    url: "https://dl.k8s.io/release/{{kubectl_version}}/bin/linux/amd64/kubectl"
+    dest: ~/.local/bin/kubectl
+    mode: '0755'
+  become_user: joydeep

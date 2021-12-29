@@ -6,9 +6,11 @@
   become: yes
   become_user: joydeep
 
-- name: Install fzf
-  ansible.builtin.script: ~/.fzf/install
-  become: yes
-  become_user: joydeep
+# - name: Install fzf
+#   ansible.builtin.script: ~/.fzf/install
+#   args:
+#     executable: ~/.fzf/install
+#   become: yes
+#   become_user: joydeep
 
   
