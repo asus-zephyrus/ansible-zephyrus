@@ -1,18 +1,26 @@
 ---
+- name: check zinit location
+  stat:
+    path: $HOME/.local/share/zinit/zinit.git
+  register: zinit
+
+
 # tasks file for zinit
-- name: Download zsh installer
+- name: Download zinit installer
   get_url: 
     url: https://git.io/zinit-install 
     dest: ~/zinit-install.sh
     mode: 0777
+  when: not zinit.stat.exists
+  
 
-- name: Execute the zsh-installer.sh
+- name: Execute the zinit-install.sh
   shell: ~/zinit-install.sh
-  # become: yes
-  # become_user: joydeep
+  when: not zinit.stat.exists
 
-- name: Remove the zsh-installer.sh
+- name: Remove the zinit-install.sh
   file: path=~/zinit-install.sh
+  when: not zinit.stat.exists
 
 - name: zinit scripts into .zshrc
   shell: |
@@ -20,3 +28,5 @@
     echo "zinit light zsh-users/zsh-autosuggestions" >> ~/.zshrc
     echo "zinit light zdharma-continuum/fast-syntax-highlighting" >> ~/.zshrc
     echo "zinit snippet https://gist.githubusercontent.com/hightemp/5071909/raw/" >> ~/.zshr
+  when: not zinit.stat.exists
+  
