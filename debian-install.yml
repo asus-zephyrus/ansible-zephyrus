@@ -1,4 +1,4 @@
-- name: Install debian basic packages
+- name: Debian OS Setup
   hosts: localhost
   become: yes
   roles:
