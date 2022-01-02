@@ -15,9 +15,7 @@
 
 - name: Execute the zsh-installer.sh
   shell: ~/oh-my-zsh-installer.sh
-  # when: not oh_my_zsh.stat.exists
-  # become: yes
-  # become_user: joydeep
+  when: not oh_my_zsh.stat.exists
 
 - name: Remove the zsh-installer.sh
   file: path=~/oh-my-zsh-installer.sh state=absent
