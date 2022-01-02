@@ -1,0 +1,14 @@
+- name: Download kubectl to local bin directory
+  get_url:
+    url: "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-367.0.0-linux-x86_64.tar.gz"
+    dest: {{ gcloud_install_dir }}
+    mode: '0777'
+  become_user: joydeep
+
+- name: Extract {{ gcloud_sdk_file }} into {{ gcloud_install_dir }}
+  shell: tar -xvf {{ gcloud_install_dir }}/{{ gcloud_sdk_file }}
+  become_user: joydeep 
+
+- name: Install google cloud
+  command: bash {{ gcloud_install_dir }}/google-cloud-sdk/install.sh
+  become_user: joydeep 

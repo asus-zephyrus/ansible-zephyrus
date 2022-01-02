@@ -1,0 +1,25 @@
+---
+# tasks file for oh-my-zsh
+
+- name: check $ZSH location
+  stat:
+    path: ~/.oh-my-zsh
+  register: oh_my_zsh
+
+- name: Download zsh installer
+  get_url: 
+    url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh 
+    dest: ~/oh-my-zsh-installer.sh
+    mode: 0777
+  when: not oh_my_zsh.stat.exists
+
+- name: Execute the zsh-installer.sh
+  shell: ~/oh-my-zsh-installer.sh
+  # when: not oh_my_zsh.stat.exists
+  # become: yes
+  # become_user: joydeep
+
+- name: Remove the zsh-installer.sh
+  file: path=~/oh-my-zsh-installer.sh state=absent
+  when: not oh_my_zsh.stat.exists
+

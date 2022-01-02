@@ -1,0 +1,22 @@
+---
+# tasks file for zinit
+- name: Download zsh installer
+  get_url: 
+    url: https://git.io/zinit-install 
+    dest: ~/zinit-install.sh
+    mode: 0777
+
+- name: Execute the zsh-installer.sh
+  shell: ~/zinit-install.sh
+  # become: yes
+  # become_user: joydeep
+
+- name: Remove the zsh-installer.sh
+  file: path=~/zinit-install.sh
+
+- name: zinit scripts into .zshrc
+  shell: |
+    echo "zinit load zdharma-continuum/history-search-multi-word" >> ~/.zshrc
+    echo "zinit light zsh-users/zsh-autosuggestions" >> ~/.zshrc
+    echo "zinit light zdharma-continuum/fast-syntax-highlighting" >> ~/.zshrc
+    echo "zinit snippet https://gist.githubusercontent.com/hightemp/5071909/raw/" >> ~/.zshr

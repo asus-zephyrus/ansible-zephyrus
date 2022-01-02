@@ -1,6 +1,8 @@
 # flathub_url: https://dl.flathub.org/repo/flathub.flatpakrepo
 user: joydeep
 kubectl_version: v1.23.1
+gcloud_install_dir: /tmp/install_gcloud
+gcloud_sdk_file: google-cloud-sdk-367.0.0-linux-x86_64.tar.gz
 pkgs:
 - appimagelauncher
 - gnome-tweaks
@@ -8,6 +10,12 @@ pkgs:
 - nodejs
 - npm
 - qbittorrent
+- htop 
+- ansible-lint
+- micro
+- zsh
+- flameshot
+
 # # - python3
 # - openssl
 # # - terraform 

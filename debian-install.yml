@@ -7,3 +7,10 @@
     - role: deekayen.awscli2
       become: yes
       become_method: "sudo"
+    - role: oh-my-zsh
+      become: yes
+      become_user: joydeep
+    - role: zinit
+      become: yes
+      become_user: joydeep
+      
