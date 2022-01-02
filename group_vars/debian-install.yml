@@ -4,6 +4,10 @@ kubectl_version: v1.23.1
 pkgs:
 - appimagelauncher
 - gnome-tweaks
+- python3-pip
+- nodejs
+- npm
+- qbittorrent
 # # - python3
 # - openssl
 # # - terraform 

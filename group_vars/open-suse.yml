@@ -1,5 +1,6 @@
 flathub_url: https://dl.flathub.org/repo/flathub.flatpakrepo
 user: joy
+install_flatpaks: false
 pkgs:
 - python3
 - openssl
@@ -14,9 +15,8 @@ pkgs:
 - gh
 - toolbox
 - deepin-terminal
-# - aws-cli
-# - code
 - fzf
+- lxd
 
 flatpaks:
 - com.jetbrains.PyCharm-Community
