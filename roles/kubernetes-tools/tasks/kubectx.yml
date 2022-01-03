@@ -1,9 +1,16 @@
+- name: check kubectx location
+  stat:
+    path: /opt/kubectx
+  register: kubectx
+
 - name: Clone kubectx
   git:
     repo: https://github.com/ahmetb/kubectx
     dest: /opt/kubectx
   become: yes
   become_method: sudo
+  when: not kubectx.stat.exists
+
 
 - name: Create symbolic link kubectx
   file:
@@ -12,6 +19,7 @@
     state: link
   become: yes
   become_method: sudo
+  when: not kubectx.stat.exists
 
 - name: Create symbolic link kubens
   file:
@@ -20,10 +28,4 @@
     state: link
   become: yes
   become_method: sudo  
-
-# - name: Create kubectx links
-#   ansible.builtin.script: |
-#     ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
-#     ln -s /opt/kubectx/kubens /usr/local/bin/kubens
-# #   become: yes
-# #   become_method: sudo
+  when: not kubectx.stat.exists

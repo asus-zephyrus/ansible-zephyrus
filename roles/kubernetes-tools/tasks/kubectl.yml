@@ -1,8 +1,14 @@
+- name: check kubectl location
+  stat:
+    path: ~/.local/bin/kubectl 
+  register: kubectl
+
 - name: Creates local bin directory
   file:
     path: ~/.local/bin
     state: directory
   become_user: joydeep
+  when: not kubectl.stat.exists
 
 - name: Download kubectl to local bin directory
   get_url:
@@ -10,3 +16,4 @@
     dest: ~/.local/bin/kubectl
     mode: '0755'
   become_user: joydeep
+  when: not kubectl.stat.exists

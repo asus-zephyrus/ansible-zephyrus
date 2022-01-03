@@ -16,3 +16,6 @@
     - role: pulumi
       become: yes
       become_user: joydeep
+    - role: kubernetes-tools
+      become: yes
+      become_user: joydeep

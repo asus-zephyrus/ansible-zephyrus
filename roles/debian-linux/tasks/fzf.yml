@@ -1,3 +1,9 @@
+- name: check fzf location
+  stat:
+    path: ~/.fzf
+  register: fzf
+
+
 - name: Git fzf clone
   git:
     repo: https://github.com/junegunn/fzf.git
@@ -5,6 +11,7 @@
     version: master
   become: yes
   become_user: joydeep
+  when: not fzf.stat.exists
 
 # - name: Install fzf
 #   ansible.builtin.script: ~/.fzf/install
