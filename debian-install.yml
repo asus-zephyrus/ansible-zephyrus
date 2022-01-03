@@ -13,4 +13,6 @@
     - role: zinit
       become: yes
       become_user: joydeep
-      
+    - role: pulumi
+      become: yes
+      become_user: joydeep

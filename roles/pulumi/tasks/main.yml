@@ -1,0 +1,29 @@
+---
+# tasks file for pulumi
+
+- name: check zinit location
+  stat:
+    path: ~/.pulumi
+  register: pulumi
+
+
+- name: Download pulumi installer
+  get_url: 
+    url: https://get.pulumi.com 
+    dest: ~/pulumi-install.sh
+    mode: 0777
+  when: not pulumi.stat.exists
+
+
+- name: Execute the pulumi-install.sh
+  shell: ~/pulumi-install.sh
+  when: not pulumi.stat.exists
+
+- name: Remove the zinit-install.sh
+  file: path=~/pulumi-install.sh
+  when: not pulumi.stat.exists
+
+- name: zinit scripts into .zshrc
+  shell: |
+    echo "export PATH=$PATH:~/.pulumi/bin" >> ~/.zshrc
+  when: not pulumi.stat.exists
