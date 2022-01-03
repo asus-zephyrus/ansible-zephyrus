@@ -21,3 +21,5 @@
   file: path=~/oh-my-zsh-installer.sh state=absent
   when: not oh_my_zsh.stat.exists
 
+
+  

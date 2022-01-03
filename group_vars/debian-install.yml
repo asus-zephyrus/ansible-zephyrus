@@ -15,6 +15,7 @@ pkgs:
 - micro
 - zsh
 - flameshot
+- vlc
 
 # # - python3
 # - openssl

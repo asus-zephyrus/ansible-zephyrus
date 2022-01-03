@@ -19,11 +19,11 @@
   shell: ~/pulumi-install.sh
   when: not pulumi.stat.exists
 
-- name: Remove the zinit-install.sh
+- name: Remove the pulumi-install.sh
   file: path=~/pulumi-install.sh
   when: not pulumi.stat.exists
 
-- name: zinit scripts into .zshrc
+- name: Pulumi scripts into .zshrc
   shell: |
     echo "export PATH=$PATH:~/.pulumi/bin" >> ~/.zshrc
   when: not pulumi.stat.exists

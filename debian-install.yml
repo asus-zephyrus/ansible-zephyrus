@@ -19,3 +19,6 @@
     - role: kubernetes-tools
       become: yes
       become_user: joydeep
+    - role: nvm
+      become: yes
+      become_user: joydeep

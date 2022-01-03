@@ -1,0 +1,29 @@
+---
+# tasks file for nvm
+- name: check nvm location
+  stat:
+    path: ~/.nvm
+  register: nvm
+
+
+- name: Download nvm installer
+  get_url: 
+    url:  https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh
+    dest: ~/nvm-installer.sh
+    mode: 0777
+  when: not nvm.stat.exists
+
+
+- name: Execute the nvm-installer.sh
+  shell: ~/nvm-installer.sh
+  when: not nvm.stat.exists
+
+- name: Remove the nvm-installer.sh
+  file: path=~/nvm-installer.sh state=absent
+  when: not nvm.stat.exists
+
+- name: configure nvm
+  shell: |
+    echo "export NVM_DIR='$HOME/.nvm'" >> ~/.zshrc
+    echo "[ -s '$NVM_DIR/nvm.sh' ] && \. '$NVM_DIR/nvm.sh'" >> ~/.zshrc
+  when: not nvm.stat.exists
